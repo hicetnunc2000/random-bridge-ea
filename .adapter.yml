@@ -1,9 +1,9 @@
 name: random-bridge-ea
 description: An external adapter to get randomness from drand.love.
-node_identifier: hicetnunc2000#2
+node_identifier: random-bridge-ea
 platforms:
   - AWS Lambda
 data_sources:
-  - name: random_bridge
+  - name: hicetnunc2000
     url: https://58ln53fooe.execute-api.us-east-1.amazonaws.com/dev/random_bridge
 parameters:
