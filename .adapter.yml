@@ -1,0 +1,9 @@
+name: drand-node-ea
+description: An external adapter to get randomness from drand.love.
+node_identifier: hicetnunc2000
+platforms:
+  - AWS Lambda
+data_sources:
+  - name: drand_handler
+    url: https://zw4l2zt531.execute-api.us-east-1.amazonaws.com/dev/drand_handler
+parameters:

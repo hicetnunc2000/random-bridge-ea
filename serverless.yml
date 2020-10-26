@@ -1,0 +1,25 @@
+service: random-bridge
+
+frameworkVersion: '2.8.0'
+
+package:
+  exclude:
+    - node_modules/**
+
+plugins:
+  - serverless-plugin-include-dependencies
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  random_bridge:
+    handler: handler.random_bridge
+    events:
+      - http:
+          path: random_bridge
+          method: post
+          cors:
+            origin: '*' # restrict to oracle
