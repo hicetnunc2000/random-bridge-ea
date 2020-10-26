@@ -18,14 +18,12 @@ const crossChain = async (input, callback) => {
 
     // latest round from drand.love
 
-    if (jobRunId != 1) {
-        await axios.get('https://api.drand.sh/public/latest')
-            .then(res => {
+    await axios.get('https://api.drand.sh/public/latest')
+        .then(res => {
 
-                tezosOperator(bigInt(res.data.randomness, 16).toString())
+            tezosOperator(bigInt(res.data.randomness, 16).toString())
 
-            })
-    }
+        })
 
     callback(200, {
         "jobRunID": jobRunId,
