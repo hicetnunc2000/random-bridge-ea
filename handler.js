@@ -7,7 +7,7 @@ const bigInt = require('big-integer')
 
 const customParams = {}
 
-const crosschain = async (input, callback) => {
+const crossChain = async (input, callback) => {
 
     // initialize validator
 
@@ -18,12 +18,14 @@ const crosschain = async (input, callback) => {
 
     // latest round from drand.love
 
-    await axios.get('https://api.drand.sh/public/latest')
-        .then(res => {
+    if (jobRunId != 1) {
+        await axios.get('https://api.drand.sh/public/latest')
+            .then(res => {
 
-            tezosOperator(bigInt(res.data.randomness, 16).toString())
+                tezosOperator(bigInt(res.data.randomness, 16).toString())
 
-        })
+            })
+    }
 
     callback(200, {
         "jobRunID": jobRunId,
@@ -33,7 +35,7 @@ const crosschain = async (input, callback) => {
 }
 
 module.exports.random_bridge = (event, context, callback) => {
-    crosschain(JSON.parse(event.body), (statusCode, data) => {
+    crossChain(JSON.parse(event.body), (statusCode, data) => {
         callback(null, {
             statusCode: statusCode,
             body: JSON.stringify(data),

@@ -33,7 +33,8 @@ NETWORK=
 SECRET_KEY=
 LAMBDA=true
 ```
-you can generate your api keys on nautilus cloud
+you can generate your api keys on [nautilus cloud](https://nautilus.cloud)
 ```
 MIT License
 ```
+
