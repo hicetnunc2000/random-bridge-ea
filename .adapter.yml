@@ -1,6 +1,6 @@
 name: random-bridge-ea
 description: An external adapter to get randomness from drand.love.
-node_identifier: random-bridge-ea
+node_identifier: xyz002
 platforms:
   - AWS Lambda
 data_sources:
